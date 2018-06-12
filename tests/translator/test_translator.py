@@ -13,7 +13,7 @@ from samtranslator.model.sam_resources import SamSimpleTable
 from samtranslator.public.plugins import BasePlugin
 
 from tests.translator.helpers import get_template_parameter_values
-from tests.translator.yaml_helper import yaml_parse
+from samtranslator.yaml_helper import yaml_parse
 from parameterized import parameterized, param
 
 import pytest
@@ -97,6 +97,7 @@ class TestTranslatorEndToEnd(TestCase):
         'cloudwatch_logs_with_ref',
         'cloudwatchlog',
         'streams',
+        'sqs',
         'simpletable',
         'simpletable_with_sse',
         'implicit_api',
@@ -281,6 +282,9 @@ class TestTranslatorEndToEnd(TestCase):
     'error_function_with_deployment_preference_missing_alias',
     'error_function_with_invalid_deployment_preference_hook_property',
     'error_invalid_logical_id',
+    'error_missing_queue',
+    'error_missing_startingposition',
+    'error_missing_stream',
     'error_multiple_resource_errors',
     'error_s3_not_in_template',
     'error_table_invalid_attributetype',
